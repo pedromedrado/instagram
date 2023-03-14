@@ -23,9 +23,9 @@ class RegisterEmailPresenter(private var view: RegisterEmail.View?, private val 
         if (isEmailValid ){
 
             val showProgress = view?.showProgress(true)
-            repository.create(email,object : RegisterCallback {
+            repository.create(email, object : RegisterCallback{
 
-                override fun onSucess() {
+                override fun onSuccess() {
                     view?.goToNameAndPasswordScreen(email)
                 }
 

@@ -7,6 +7,7 @@ import com.example.instagram1.login.data.LoginRepository
 import common.view.model.UserAuth
 
 class LoginPresenter(private var view: Login.View?, private val repository: LoginRepository): Login.Presenter {
+
     override fun login(email: String, password: String) {
 
         val isEmailValid = Patterns.EMAIL_ADDRESS.matcher(email).matches()
@@ -24,8 +25,11 @@ class LoginPresenter(private var view: Login.View?, private val repository: Logi
         else{view?.displayPasswordFailure(null)
         }
 
+
+
         if (isEmailValid && isPasswordValid){
             view?.showProgress(true)
+
             repository.login(email,password,object : LoginCallback {
 
                 override fun onSucess(userAuth: UserAuth) {

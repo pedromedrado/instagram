@@ -28,10 +28,12 @@ class LoginActivity : AppCompatActivity(), Login.View {
     //iniciação do presenter passando interface e os dados que quer passar
     override lateinit var presenter: Login.Presenter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         presenter = LoginPresenter(this, DependencyInjector.loginRepository())
 
@@ -64,8 +66,6 @@ class LoginActivity : AppCompatActivity(), Login.View {
     private val watcher = TxtWatcher {
         binding.btnEnter.isEnabled = binding.loginEditEmail.text.toString().isNotEmpty()&&
                 binding.loginEditPassword.text.toString().isNotEmpty()
-
-
 
     }
 

@@ -21,8 +21,6 @@ interface Login {
         fun displayPasswordFailure(@StringRes passwordError:Int?)
         fun onUserAuthenticated()
         fun onUserUnauthorized(message:String)
-
-
     }
 
 }

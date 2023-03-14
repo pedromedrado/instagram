@@ -1,5 +1,6 @@
 package Register.view.data
 
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.os.Handler
 import android.os.Looper
 import common.view.model.Database
@@ -13,7 +14,7 @@ class FakeRegisterDataSource : RegisterDataSource {
        val userAuth = Database.userAuth.firstOrNull { email == it.email }
 
             if (userAuth == null){
-                callback.onSucess()
+                callback.onSuccess()
             }else{
                 callback.onFailure("Usuário já foi Cadastrado")
             }
@@ -38,7 +39,7 @@ class FakeRegisterDataSource : RegisterDataSource {
                 val created = Database.userAuth.add(newUser)
 
                 if (created){
-                    callback.onSucess()
+                    callback.onSuccess()
                 }else{
                     callback.onFailure("error interno no servidor")
                 }

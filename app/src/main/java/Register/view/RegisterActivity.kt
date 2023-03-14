@@ -115,6 +115,7 @@ class RegisterActivity : AppCompatActivity(), FragmentAttachListener {
         val dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         return File.createTempFile("JPEG_${timestamp}_",".jpg",dir)
     }
+
     private fun replaceFragment(fragment: Fragment) {
 
 

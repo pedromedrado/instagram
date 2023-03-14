@@ -1,4 +1,4 @@
-package common.view.extesions
+package common.view.extensions
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -11,6 +11,7 @@ import android.app.Activity
             super.onAnimationEnd(animation)
             callback.invoke()
         }
-
     }
+
+
 }
